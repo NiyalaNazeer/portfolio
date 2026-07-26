@@ -1,5 +1,5 @@
 // ===============================
-// Typing Animation
+// Professional Typing Animation
 // ===============================
 
 const titles = [
@@ -10,48 +10,39 @@ const titles = [
     "Python Developer"
 ];
 
+const subtitle = document.querySelector(".hero-left h2");
+
 let titleIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
-
-const subtitle = document.querySelector(".hero-left h2");
+let deleting = false;
 
 function typeEffect() {
 
     const current = titles[titleIndex];
 
-    if (!isDeleting) {
+    if (!deleting) {
+        subtitle.textContent = current.slice(0, ++charIndex);
 
-        subtitle.textContent = current.substring(0, charIndex++);
-
-        if (charIndex > current.length) {
-            isDeleting = true;
-
-            setTimeout(typeEffect, 1200);
-
+        if (charIndex === current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1800); // pause before deleting
             return;
         }
 
     } else {
 
-        subtitle.textContent = current.substring(0, charIndex--);
+        subtitle.textContent = current.slice(0, --charIndex);
 
-        if (charIndex < 0) {
-
-            isDeleting = false;
-
-            titleIndex++;
-
-            if (titleIndex >= titles.length)
-                titleIndex = 0;
+        if (charIndex === 0) {
+            deleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
         }
     }
 
-    setTimeout(typeEffect, isDeleting ? 45 : 90);
+    setTimeout(typeEffect, deleting ? 45 : 90);
 }
 
 typeEffect();
-
 
 // ===============================
 // Sticky Header
@@ -212,3 +203,16 @@ behavior:"smooth"
 });
 
 });
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    topBtn.classList.toggle("show", window.scrollY > 300);
+});
+
+topBtn.onclick = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};

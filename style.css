@@ -62,7 +62,15 @@ nav a{
 nav a:hover{
     color:#B53A39;
 }
+header{
+    transition:.35s ease;
+}
 
+header.scrolled{
+    background:rgba(5,10,25,.97);
+    backdrop-filter:blur(14px);
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
 /* ===============================
 Hero
 =================================*/
@@ -121,6 +129,18 @@ margin-top:30px;
 
 color:#444;
 
+}
+.hero-left h2::after{
+    content:"|";
+    margin-left:4px;
+    color:#3b82f6;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
 }
 
 .hero-left p{
@@ -295,7 +315,30 @@ transition:.4s;
 transform:translateY(-12px);
 
 }
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#3b82f6;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
 
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:.3s ease;
+}
+
+#topBtn.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
  
 
  
