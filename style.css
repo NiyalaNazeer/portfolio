@@ -562,3 +562,32 @@ margin-top:10px;
 color:#8fa6c0;
 
 }
+
+/* Scroll Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Active Navbar */
+
+nav a.active{
+    color:#4ea5ff;
+    border-bottom:2px solid #4ea5ff;
+    padding-bottom:5px;
+}
+
+/* Hero Background */
+
+.hero{
+    background:
+        radial-gradient(circle at top left,#1d4ed855 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#9333ea44 0%,transparent 40%);
+}
