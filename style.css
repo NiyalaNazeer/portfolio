@@ -350,80 +350,71 @@ Projects
 /* ===============================
    Projects
 =================================*/
-
 #projects{
-    background:#F8F4F3;
-}
-
-#projects .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
-    gap:35px;
-    margin-top:50px;
-}
-
-.project{
-    background:#fff;
-    padding:35px;
-    border-radius:22px;
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-    transition:all .4s ease;
-    position:relative;
+    min-height:200vh;
+    background:#0b0b0b;
+    color:#fff;
     overflow:hidden;
-    border:1px solid rgba(181,58,57,.08);
 }
 
-.project::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:5px;
-    background:#B53A39;
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:.4s;
+.section-title{
+    position:sticky;
+    top:40px;
+    text-align:center;
+    font-size:3rem;
+    z-index:5;
 }
 
-.project:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 45px rgba(175, 183, 189, 0.712);
+.projects-slider{
+    scroll-snap-type:y mandatory;
 }
 
-.project:hover::before{
-    transform:scaleX(1);
+.project-slide{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    scroll-snap-align:start;
 }
 
-.project h3{
-    color:#B53A39;
-    font-size:24px;
-    margin-bottom:18px;
-    font-weight:700;
+.project-card{
+    width:70%;
+    max-width:800px;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+
+    transform:translateY(100px);
+    opacity:0;
+    transition:1s ease;
 }
 
-.project p{
-    color:#555;
-    font-size:16px;
+.project-card.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.project-card h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.project-card p{
     line-height:1.8;
+    color:#ccc;
     margin-bottom:25px;
 }
 
-.project a{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:#B53A39;
+.project-card a{
+    color:#4fd1ff;
+    text-decoration:none;
     font-weight:600;
-    transition:.3s;
 }
 
-.project a:hover{
-    color:#222;
-    transform:translateX(6px);
+.project-card:hover{
+    transform:scale(1.03);
 }
-
- 
 
 /* ===============================
 Contact
