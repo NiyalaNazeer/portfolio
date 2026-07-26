@@ -348,74 +348,46 @@ transform:translateY(-12px);
 Projects
 =================================*/
 /* ===============================
+ /* ===============================
    Projects
 =================================*/
-#projects{
-    min-height:200vh;
-    background:#b5cbdf;
-    color:#fff;
-    overflow:hidden;
+
+#projects .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:30px;
+    margin-top:40px;
 }
 
-.section-title{
-    position:sticky;
-    top:40px;
-    text-align:center;
-    font-size:3rem;
-    z-index:5;
-}
-
-.projects-slider{
-    scroll-snap-type:y mandatory;
-}
-
-.project-slide{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    scroll-snap-align:start;
-}
-
-.project-card{
-    width:70%;
-    max-width:800px;
-    padding:50px;
+.project{
+    background:white;
     border-radius:25px;
-    background:rgba(212, 230, 235, 0.884);
-    backdrop-filter:blur(18px);
-
-    transform:translateY(100px);
-    opacity:0;
-    transition:1s ease;
+    padding:35px;
+    color:#333;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.4s;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
-.project-card.show{
-    transform:translateY(0);
-    opacity:1;
+.project:hover{
+    transform:translateY(-15px);
 }
 
-.project-card h3{
-    font-size:2rem;
+.project h3{
+    margin-bottom:15px;
+}
+
+.project p{
     margin-bottom:20px;
+    flex-grow:1;
 }
 
-.project-card p{
-    line-height:1.8;
-    color:#ccc;
-    margin-bottom:25px;
+.project a{
+    align-self:flex-start;
 }
-
-.project-card a{
-    color:#4fd1ff;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.project-card:hover{
-    transform:scale(1.03);
-}
-
 /* ===============================
 Contact
 =================================*/
