@@ -323,7 +323,7 @@ transform:translateY(-12px);
     height:50px;
     border:none;
     border-radius:50%;
-    background:#3b82f6;
+    background:#B53A39;
     color:#fff;
     font-size:22px;
     cursor:pointer;
@@ -348,28 +348,71 @@ transform:translateY(-12px);
 Projects
 =================================*/
 
-.project{
-
-background:white;
-
-border-radius:25px;
-
-padding:35px;
-
-color:#333;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-transition:.4s;
-
+#projects{
+    min-height:200vh;
+    background:#0b0b0b;
+    color:#fff;
+    overflow:hidden;
 }
 
-.project:hover{
-
-transform:translateY(-15px);
-
+.section-title{
+    position:sticky;
+    top:40px;
+    text-align:center;
+    font-size:3rem;
+    z-index:5;
 }
 
+.projects-slider{
+    scroll-snap-type:y mandatory;
+}
+
+.project-slide{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    scroll-snap-align:start;
+}
+
+.project-card{
+    width:70%;
+    max-width:800px;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+
+    transform:translateY(100px);
+    opacity:0;
+    transition:1s ease;
+}
+
+.project-card.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.project-card h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.project-card p{
+    line-height:1.8;
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+.project-card a{
+    color:#B53A39;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.project-card:hover{
+    transform:scale(1.03);
+}
  
 
  

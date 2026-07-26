@@ -16,30 +16,43 @@ let titleIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
+ 
+
+    const current = titles[titleIndex];
+const subtitle = document.querySelector(".hero-left h2");
+
 function typeEffect() {
 
     const current = titles[titleIndex];
 
-    if (!deleting) {
-        subtitle.textContent = current.slice(0, ++charIndex);
+    if (!isDeleting) {
 
-        if (charIndex === current.length) {
-            deleting = true;
-            setTimeout(typeEffect, 1800); // pause before deleting
+        subtitle.textContent = current.substring(0, charIndex++);
+
+        if (charIndex > current.length) {
+            isDeleting = true;
+
+            setTimeout(typeEffect, 1200);
+
             return;
         }
 
     } else {
 
-        subtitle.textContent = current.slice(0, --charIndex);
+        subtitle.textContent = current.substring(0, charIndex--);
 
-        if (charIndex === 0) {
-            deleting = false;
-            titleIndex = (titleIndex + 1) % titles.length;
+        if (charIndex < 0) {
+
+            isDeleting = false;
+
+            titleIndex++;
+
+            if (titleIndex >= titles.length)
+                titleIndex = 0;
         }
     }
 
-    setTimeout(typeEffect, deleting ? 45 : 90);
+    setTimeout(typeEffect, isDeleting ? 45 : 90);
 }
 
 typeEffect();
@@ -171,7 +184,7 @@ topBtn.style.width="50px";
 topBtn.style.height="50px";
 topBtn.style.border="none";
 topBtn.style.borderRadius="50%";
-topBtn.style.background="#3b82f6";
+topBtn.style.background="#B53A39";
 topBtn.style.color="white";
 topBtn.style.fontSize="22px";
 topBtn.style.cursor="pointer";
