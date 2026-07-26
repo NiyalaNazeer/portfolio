@@ -388,7 +388,7 @@ Projects
 
 .project:hover{
     transform:translateY(-12px);
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
+    box-shadow:0 20px 45px rgba(175, 183, 189, 0.712);
 }
 
 .project:hover::before{
