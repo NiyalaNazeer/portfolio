@@ -1,7 +1,3 @@
-// ===============================
-// Professional Typing Animation
-// ===============================
-
 const titles = [
     "AI Engineer",
     "Machine Learning Engineer",
@@ -10,15 +6,10 @@ const titles = [
     "Python Developer"
 ];
 
-const subtitle = document.querySelector(".hero-left h2");
-
 let titleIndex = 0;
 let charIndex = 0;
-let deleting = false;
+let isDeleting = false;
 
- 
-
-    const current = titles[titleIndex];
 const subtitle = document.querySelector(".hero-left h2");
 
 function typeEffect() {
@@ -56,6 +47,7 @@ function typeEffect() {
 }
 
 typeEffect();
+
 
 // ===============================
 // Sticky Header
