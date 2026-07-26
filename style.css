@@ -343,50 +343,65 @@ transform:translateY(-12px);
 
  
  
-
 /* ===============================
-Projects
-=================================*/
-/* ===============================
- /* ===============================
    Projects
 =================================*/
 
 #projects .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-    gap:30px;
-    margin-top:40px;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+    margin-top:50px;
 }
 
 .project{
-    background:white;
-    border-radius:25px;
+    background:#fff;
+    border-radius:20px;
     padding:35px;
-    color:#333;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    transition:.4s;
-    height:100%;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.35s ease;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
 }
 
 .project:hover{
-    transform:translateY(-15px);
+    transform:translateY(-10px);
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
 }
 
 .project h3{
+    color:#B53A39;
     margin-bottom:15px;
+    font-size:24px;
 }
 
 .project p{
-    margin-bottom:20px;
-    flex-grow:1;
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.8;
 }
 
 .project a{
-    align-self:flex-start;
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:30px;
+    background:#B53A39;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.project a:hover{
+    background:#222;
+}
+
+@media(max-width:900px){
+
+#projects .cards{
+    grid-template-columns:1fr;
+}
+
 }
 /* ===============================
 Contact
