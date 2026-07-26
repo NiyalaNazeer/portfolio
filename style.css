@@ -353,56 +353,56 @@ transform:translateY(-12px);
     gap:35px;
     margin-top:50px;
 }
+ 
 
 .project{
-    background:#fff;
-    border-radius:20px;
-    padding:35px;
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-    transition:.35s ease;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+
+    background:#111d32;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-bottom:35px;
+
+    transition:.3s;
+
 }
 
 .project:hover{
-    transform:translateY(-10px);
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+
+    transform:translateY(-8px);
+
 }
 
 .project h3{
-    color:#B53A39;
+
+    color:#63b3ff;
+
     margin-bottom:15px;
-    font-size:24px;
+
 }
 
 .project p{
-    color:#555;
-    margin-bottom:25px;
-    line-height:1.8;
+
+    color:#d4dde8;
+
+    margin-bottom:20px;
+
 }
 
 .project a{
+
     display:inline-block;
-    padding:12px 22px;
+
+    padding:10px 20px;
+
+    background:#3b82f6;
+
     border-radius:30px;
-    background:#B53A39;
-    color:#fff;
-    font-weight:600;
-    transition:.3s;
-}
-
-.project a:hover{
-    background:#222;
-}
-
-@media(max-width:900px){
-
-#projects .cards{
-    grid-template-columns:1fr;
-}
 
 }
+
 /* ===============================
 Contact
 =================================*/
